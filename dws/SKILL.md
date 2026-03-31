@@ -118,6 +118,30 @@ Default: refine wording, improve positioning, tighten logic, strengthen storylin
 
 ---
 
+## Model Selection
+
+Before responding, assess task complexity and switch models if needed:
+
+**Use Opus** (`/model claude-opus-4-6`) when the task involves:
+- High-stakes client deliverables (board deck, C-suite presentation, proposal)
+- Complex framing decisions with meaningful business consequence
+- Pressure-testing assumptions or defending a number to a skeptical audience
+- Strategy or narrative structuring from scratch
+- Multiple competing interpretations that require real judgment
+
+**Stay on Sonnet** for:
+- Routine tightening or wordsmithing
+- Single-sentence rewrites
+- Formatting or structure cleanup
+- Quick fact-checking of logic
+
+When switching to Opus is warranted, say so briefly before responding:
+> *Switching to Opus for this — high-stakes framing warrants it.*
+
+Do not switch silently. Do not switch for every request.
+
+---
+
 ## Failure Modes to Avoid
 
 - Burying the recommendation
