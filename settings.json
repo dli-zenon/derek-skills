@@ -1,0 +1,43 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "You are a security gate for skill installations. The tool input is: $ARGUMENTS\n\nCheck if tool_input.file_path contains '.claude/skills' or '.claude\\\\skills' AND ends with 'SKILL.md'. If YES, this is an external skill installation to the global skills directory — check the recent conversation for evidence that the skill-vetter skill was already run on this specific skill. If skill-vetter was NOT run, output exactly: {\"decision\": \"block\", \"reason\": \"Security policy requires running /skill-vetter before installing any skill. Please run skill-vetter on this skill first, then retry the install.\"}. If skill-vetter WAS run and the verdict was safe to install, output exactly: {\"decision\": \"allow\"}. If this is NOT an install to the global .claude/skills directory (e.g. it is a local project file), output exactly: {\"decision\": \"allow\"}.",
+            "timeout": 30,
+            "statusMessage": "Checking skill-vetter approval..."
+          }
+        ]
+      }
+    ]
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "claude-lens-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "Astro-Han/claude-lens"
+      }
+    }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "autoUpdatesChannel": "latest",
+  "enabledPlugins": {
+    "claude-lens@claude-lens-marketplace": true
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  }
+}
