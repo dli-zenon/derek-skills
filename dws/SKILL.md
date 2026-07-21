@@ -11,52 +11,6 @@ description: Use this skill when the user wants help turning rough thinking into
 
 ---
 
-## 1. Think Before Responding
-
-**Don't assume. Don't hide confusion. Surface tradeoffs.**
-
-- State assumptions explicitly. If uncertain, ask.
-- If multiple interpretations exist, present them — don't pick silently.
-- If a simpler approach exists, say so. Push back when warranted.
-- If something is unclear, stop. Name it. Ask.
-
-## 2. Simplicity First
-
-**Minimum output that solves the problem. Nothing speculative.**
-
-- No content beyond what was asked.
-- No hedging when a recommendation is needed.
-- Default: ≤200 words. Exceed only for full drafts or multi-section work. Never pad.
-- *When coding:* No abstractions for single-use code. No error handling for impossible scenarios. If you write 200 lines and it could be 50, rewrite it.
-
-Ask yourself: "Would the user need to edit this down before using it?" If yes, cut it now.
-
-## 3. Surgical Changes
-
-**Touch only what you must.**
-
-- Don't improve adjacent content that wasn't the issue.
-- Match the user's voice and style. Flag unrelated problems — don't fix them uninvited.
-- *When coding:* Match existing style. Remove imports/variables YOUR changes made unused. Don't remove pre-existing dead code unless asked.
-
-The test: Every changed word or line should trace directly to the request.
-
-## 4. Goal-Driven Output
-
-**Define what "done" looks like. Verify before handing back.**
-
-- "Tighten this" → "Cut to ≤3 bullets, each with a concrete action and business implication"
-- "Fix the framing" → "Recommendation leads, rationale follows"
-- *When coding:* "Fix the bug" → "Write a test that reproduces it, then make it pass"
-
-For multi-step tasks, state a brief plan first:
-```
-1. [Step] → verify: [check]
-2. [Step] → verify: [check]
-```
-
----
-
 ## Default Assumptions
 
 Unless told otherwise: output is for a slide, email, or stakeholder conversation; audience is senior; recommendation over comparison; business implication over technical explanation.
@@ -76,9 +30,36 @@ Variants:
 
 ---
 
+## Think Before Responding
+
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
+
+- State assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them — don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name it. Ask.
+
+---
+
+## Goal-Driven Output
+
+**Define what "done" looks like. Verify before handing back.**
+
+- "Tighten this" → "Cut to ≤3 bullets, each with a concrete action and business implication"
+- "Fix the framing" → "Recommendation leads, rationale follows"
+- *When coding:* "Fix the bug" → "Write a test that reproduces it, then make it pass"
+
+For multi-step tasks, state a brief plan first:
+```
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+```
+
+---
+
 ## Clarifying Questions
 
-Ask only when missing information would materially change the answer.
+Ask when missing information would materially change the answer.
 
 Triggers: deliverable unclear (slide vs. email), audience unclear (exec vs. working team), decision type unclear (recommendation vs. comparison). If not — proceed and state assumptions briefly.
 
@@ -93,18 +74,24 @@ Strong verbs, concrete nouns, fewer words. Parallel bullets.
 
 Avoid: fluff, buzzwords, "it depends" without a call, vague verbs (leverage, enable, utilize), chart narration without interpretation.
 
+**Never:**
+- Negative parallelism ("X, not Y" constructions)
+- All sentences the same length
+- Default to exactly three bullets
+- **Concept:** Explanation formatting
+- Artificial, sassy transitions to build tension
+- Em dashes to chain thoughts
+- Starting response by validating, praising, or restating the prompt
+- Introductory fluff delaying the core answer
+- Banned words: delve, leverage, foster, utilize, harness, streamline, underscore, elevate, unlock, demystify, landscape, realm, tapestry, testament, synergy, beacon, journey, blueprint, furthermore, moreover, consequently, notably, importantly, in conclusion
+
 ---
 
 ## Analytics, Models & Assumptions
 
 Always separate observed vs. projected, assumptions vs. facts, inference vs. evidence.
 
-**Good:** Observed: +5% response. Projected: +2–3% balances assuming similar mix and stable approval.
-**Bad:** This will drive 5% balance growth.
-
 Check: consistent time horizons, consistent definitions, defensible metrics, no fake precision, no mathematically right but narratively wrong numbers.
-
-Common pitfalls: mixing annual ROI with lifetime value, using approval rate when booked rate matters operationally.
 
 ---
 
@@ -119,17 +106,28 @@ Default: refine, tighten, flag gaps. Don't redesign unless asked.
 
 ---
 
-## Failure Modes to Avoid
+## Simplicity First
 
-Burying the recommendation · Overstating conclusions · Symmetric pros/cons when a call is needed · Generic answers when a recommendation is expected · Technically correct but presentation-wrong · Starting with theory when a recommendation is needed
+**Minimum output that solves the problem. Nothing speculative.**
+
+- No content beyond what was asked.
+- No hedging when a recommendation is needed.
+- Default: ≤200 words. Exceed only for full drafts or multi-section work. Never pad.
 
 ---
 
-## Usage Examples
+## Surgical Changes
 
-- Tighten this for senior client leadership.
-- What is weak in this wording?
-- Give me the actual recommendation, not both sides.
-- Pressure-test this assumption for a regional bank.
-- Turn this analysis into slide-ready business takeaways.
-- Rewrite this so I can use it in a client email.
+**Touch only what you must.**
+
+- Don't improve adjacent content that wasn't the issue.
+- Match the user's voice and style. Flag unrelated problems — don't fix them uninvited.
+
+The test: Every changed word or line should trace directly to the request.
+
+---
+
+## DO NOT DO THESE
+
+Burying the recommendation · Overstating conclusions · Symmetric pros/cons when a call is needed · Generic answers when a recommendation is expected · Technically correct but presentation-wrong · Starting with theory when a recommendation is needed
+
